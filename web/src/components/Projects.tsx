@@ -1,9 +1,29 @@
-import { PROJECTS, type Project } from "../data";
-import { ExternalLinkIcon, GithubIcon } from "./icons";
+import { useEffect, useState } from "react";
+import { PROJECTS, type Project, type ProjectGif } from "../data";
+import { ExternalLinkIcon, GithubIcon, GlobeIcon } from "./icons";
 
-function ProjectCard({ title, description, tags, github }: Project) {
+function useGifCycle(gifs: ProjectGif[]) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (gifs.length <= 1) return;
+    const id = setTimeout(() => {
+      setIndex((current) => (current + 1) % gifs.length);
+    }, gifs[index].durationMs);
+    return () => clearTimeout(id);
+  }, [gifs, index]);
+
+  return index;
+}
+
+function ProjectCard({ title, description, tags, github, website, gifs }: Project) {
+  const activeIndex = useGifCycle(gifs);
+
   return (
     <article className="card">
+      <div className="card-media">
+        <img src={gifs[activeIndex].src} alt={`${title} demo`} loading="lazy" />
+      </div>
       <div className="card-body">
         <h3>{title}</h3>
         <p>{description}</p>
@@ -18,6 +38,13 @@ function ProjectCard({ title, description, tags, github }: Project) {
             View on GitHub
             <ExternalLinkIcon className="ext-icon" size={11} />
           </a>
+          {website && (
+            <a className="card-link" href={website} target="_blank" rel="noopener">
+              <GlobeIcon size={13} />
+              Visit site
+              <ExternalLinkIcon className="ext-icon" size={11} />
+            </a>
+          )}
         </div>
       </div>
     </article>
