@@ -41,8 +41,8 @@ export const PROJECTS: Project[] = [
     tags: ["React", "Node.js", "Flask", "Docker"],
     github: "https://github.com/yvonneyihan/flight-dashboard",
     gifs: [
-      { src: "/projects/skylink-1.gif", durationMs: 7500 },
-      { src: "/projects/skylink-2.gif", durationMs: 9330 },
+      { src: "/projects/skylink-1.gif", durationMs: 13070 },
+      { src: "/projects/skylink-2.gif", durationMs: 7600 },
     ],
   },
   {
