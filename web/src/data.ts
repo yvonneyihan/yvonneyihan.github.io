@@ -15,11 +15,79 @@ export type Project = {
 
 export const NAV_LINKS: { label: string; href: string }[] = [
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 
-export const SKILLS: string[] = ["React", "Node.js", "Express", "SQL", "Python"];
+export type SkillCategory = {
+  label: string;
+  skills: string[];
+};
+
+export const SKILL_CATEGORIES: SkillCategory[] = [
+  { label: "Languages", skills: ["Python", "JavaScript", "TypeScript", "Java", "Go", "SQL"] },
+  { label: "Frontend", skills: ["React", "Angular", "Vue", "HTML/CSS", "Tailwind CSS", "Vite", "Figma"] },
+  { label: "Backend & APIs", skills: ["Node.js", "Django", "FastAPI", "Flask", "REST APIs"] },
+  { label: "Testing & Practices", skills: ["Pytest", "Jest", "Unit Testing", "Git"] },
+  { label: "Databases & Caching", skills: ["PostgreSQL", "MySQL", "Redis", "MongoDB"] },
+  {
+    label: "Cloud & DevOps",
+    skills: ["AWS (EC2, S3, RDS, IAM)", "Google Cloud", "Docker", "GitHub Actions (CI/CD)", "Linux/Bash"],
+  },
+  {
+    label: "AI & Tools",
+    skills: ["Claude Code", "GitHub Copilot", "OpenAI API", "Anthropic API", "Prompt Engineering"],
+  },
+];
+
+export type ExperienceEntry = {
+  company: string;
+  role: string;
+  location: string;
+  start: string;
+  end: string;
+  bullets: string[];
+};
+
+export const EXPERIENCE: ExperienceEntry[] = [
+  {
+    company: "CTBC Bank",
+    role: "Associate, Global Capital Markets",
+    location: "Taipei, Taiwan",
+    start: "July 2021",
+    end: "Apr. 2024",
+    bullets: [
+      "Combined finance and technology to build internal tools, optimize data pipelines, and develop Python-based investment analysis models—while translating complex insights into practical solutions for both teams and clients",
+    ],
+  },
+];
+
+export type EducationEntry = {
+  school: string;
+  degree: string;
+  start: string;
+  end: string;
+  details?: string[];
+};
+
+export const EDUCATION: EducationEntry[] = [
+  {
+    school: "University of Illinois Urbana-Champaign",
+    degree: "Master of Information Management",
+    start: "Aug. 2024",
+    end: "May 2026",
+    details: ["Courses: Database Systems; Data Mining; NLP; Deep Learning for Computer Vision"],
+  },
+  {
+    school: "The Chinese University of Hong Kong",
+    degree: "Integrated Bachelor of Business Administration",
+    start: "Sept. 2017",
+    end: "June 2021",
+    details: ["Concentrations: Business Analytics & Finance"],
+  },
+];
 
 export const PROJECTS: Project[] = [
   {

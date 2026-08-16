@@ -84,6 +84,22 @@ export function GlobeIcon({ size = 16, className }: IconProps) {
   );
 }
 
+export function ChevronUpIcon({ size = 15, className }: IconProps) {
+  return (
+    <svg className={className} width={size} height={size} viewBox="0 0 24 24" {...base}>
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  );
+}
+
+export function ChevronDownIcon({ size = 15, className }: IconProps) {
+  return (
+    <svg className={className} width={size} height={size} viewBox="0 0 24 24" {...base}>
+      <polyline points="6 9 12 15 18 9" />
+    </svg>
+  );
+}
+
 export function ExternalLinkIcon({ size = 11, className }: IconProps) {
   return (
     <svg className={className} width={size} height={size} viewBox="0 0 24 24" {...base}>

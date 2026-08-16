@@ -1,5 +1,3 @@
-import { SKILLS } from "../data";
-
 export function About() {
   return (
     <section id="about" className="section">
@@ -18,11 +16,6 @@ export function About() {
             <span className="highlight">SQL</span> databases for structured data, and{" "}
             <span className="highlight">Python</span> for data pipelines and analytics tooling.
           </p>
-          <ul className="tags skills">
-            {SKILLS.map((skill) => (
-              <li key={skill}>{skill}</li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>
