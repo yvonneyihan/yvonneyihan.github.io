@@ -9,7 +9,7 @@ import { Skills } from "./components/Skills";
 import { useActiveSection } from "./hooks/useActiveSection";
 import { useTheme } from "./hooks/useTheme";
 
-const SECTION_IDS = ["about", "experience", "skills", "projects", "contact"];
+const SECTION_IDS = ["about", "projects", "experience", "skills", "contact"];
 
 function App() {
   const { dark, toggle } = useTheme();
@@ -21,9 +21,9 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Projects />
         <ExperienceEducation />
         <Skills />
-        <Projects />
         <Contact />
       </main>
       <Footer />
